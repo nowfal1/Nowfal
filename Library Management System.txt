@@ -1,0 +1,70 @@
+# include <stdio.h>
+# include <conio.h>
+# include <stdlib.h>
+# include <string.h>
+
+struct library {
+   char book_name[100];
+   char author_name[100];
+   float cost;
+   int nopages;
+};
+int main(){
+    struct library lib[100];
+    int i=0,j=0,count=0;
+
+
+
+ while(j!=6)
+ {
+   printf("\n 1.Add The Book Details\n");
+   printf("2.Display The BooKS Details\n");
+   printf("3.Display The No.Of.Books\n");
+   printf("4.Exit \n");
+   printf("Enter The Number:");
+   scanf("%d",&j);
+
+ switch(j){
+case 1:
+    printf("Enter The Book Name: ");
+    scanf("%s",&lib[i].book_name);
+    printf("\n Enter The Author Name: ");
+    scanf("%s",&lib[i].author_name);
+    printf("\nEnter The Number Of Pages:");
+    scanf("%d",&lib[i].nopages);
+    printf("\n Enter The Cost Of The Book");
+    scanf("%f",&lib[i].cost);
+    count=count+1;
+    i=i+1;
+    break;
+
+case 2:
+    if(count==0)
+    {
+        printf("\n There Are No Books Stored \n");
+    }
+    else{
+        for(i=0;i<count;i++)
+        {
+            printf("\n Name Of The Book: %s",lib[i].book_name);
+            printf("\n Author: %s",lib[i].author_name);
+            printf("\n No.of.pages: %d",lib[i].nopages);
+            printf("\n Cost Of The Book : %f",lib[i].cost);
+        }
+    }
+case 3:
+    printf("Total Number Of Books %d",count);
+
+case 4:
+    exit(0);
+
+default:
+    printf("You Have Entered An Invalid Number Loser! \n");
+
+
+
+ }
+
+ }
+   return 0;
+}
